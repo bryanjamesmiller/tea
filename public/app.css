@@ -1,0 +1,15 @@
+body {
+    background: #404040;
+    color: white;
+    max-width: auto;
+    p-4;
+    margin: auto;
+    font-family: sans-serif;
+}
+h1{
+    border-bottom: 1px solid bisque;
+}
+p{
+    line-height:1.6;
+    font-size:20px;
+}
