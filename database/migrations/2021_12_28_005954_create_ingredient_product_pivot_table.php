@@ -17,9 +17,8 @@ class CreateIngredientProductPivotTable extends Migration
             $table->id();
             $table->foreignId("ingredient_id");
             $table->foreignId("product_id");
-            $table->integer("quantity");
-            $table->string("unit_of_measurement");
-
+            $table->decimal("ounces", 14, 5);
+            $table->timestamps();
         });
     }
 

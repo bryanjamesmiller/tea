@@ -34,9 +34,14 @@ class IngredientController extends Controller
      * @param  \App\Http\Requests\StoreIngredientRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIngredientRequest $request)
+    public function store()
     {
-        //
+        Ingredient::create([
+            'name' => request('name'),
+            'ounces' => request('ounces')
+            ]);
+
+        return back();
     }
 
     /**

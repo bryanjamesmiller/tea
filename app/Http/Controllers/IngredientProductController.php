@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use App\Models\Ingredient;
 use App\Models\IngredientProduct;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class IngredientProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,34 +26,37 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view("create_product");
+        //
     }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProductRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store()
     {
-        $product = Product::create([
-            'name' => request("name")
+        IngredientProduct::create([
+           'product_id' => request('product_id'),
+           'ingredient_id' => request('ingredient_id'),
+           'ounces' => request('ounces'),
         ]);
 
         return view("add_ingredient_product", [
-            "product" => $product,
+            "product" => Product::find(request('product_id')),
             'ingredients' => Ingredient::all(),
-            'ingredientProducts' => IngredientProduct::with('ingredient')->where('product_id', $product->id)->get(),
+            'ingredientProducts' => IngredientProduct::with('ingredient')->where('product_id', request('product_id'))->get(),
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\IngredientProduct  $ingredientProduct
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(IngredientProduct $ingredientProduct)
     {
         //
     }
@@ -62,10 +64,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\IngredientProduct  $ingredientProduct
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(IngredientProduct $ingredientProduct)
     {
         //
     }
@@ -73,11 +75,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProductRequest  $request
-     * @param  \App\Models\Product  $product
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\IngredientProduct  $ingredientProduct
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(Request $request, IngredientProduct $ingredientProduct)
     {
         //
     }
@@ -85,10 +87,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\IngredientProduct  $ingredientProduct
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(IngredientProduct $ingredientProduct)
     {
         //
     }

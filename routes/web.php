@@ -36,3 +36,4 @@ Route::get('reorder', function () {
 Route::resource("order", \App\Http\Controllers\OrderController::class);
 Route::resource("ingredient", \App\Http\Controllers\IngredientController::class);
 Route::resource("product", \App\Http\Controllers\ProductController::class);
+Route::resource("ingredient_product", \App\Http\Controllers\IngredientProductController::class);
