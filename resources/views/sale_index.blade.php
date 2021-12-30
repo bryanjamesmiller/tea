@@ -15,12 +15,10 @@
                     <tr>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Name
+
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Cell
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Product
+                            Products
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Total
@@ -31,46 +29,26 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- Odd row -->
+                    @foreach($productSales as $productSale)
+
+
                     <tr class="bg-white">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            Jane Cooper
+                            {{ $productSale->sale->user->name   }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            662-100-2001
+                            @foreach($productSale->sale->products as $product)
+                                {{ $productSale->quantity }} {{ $product->name }},
+                            @endforeach
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            strawberry
+                            {{ $productSale->sale->total }}
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            $4.00
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                         </td>
                     </tr>
-
-                    <!-- Even row -->
-                    <tr class="bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            Carl Underwood
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            662-102-2002
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            kiwi,
-                            orange
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            $8.00
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                        </td>
-                    </tr>
-
-                    <!-- More people... -->
+                    @endforeach
                     </tbody>
                     <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">return</a>
                 </table>

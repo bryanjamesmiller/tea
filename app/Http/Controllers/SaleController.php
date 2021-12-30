@@ -18,7 +18,9 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
+        return view("sale_index", [
+            "productSales" => ProductSale::with('sale', 'sale.products')->get(),
+        ]);
     }
 
     /**
