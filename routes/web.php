@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route("sale.create"));
 });
 
 Route::get('new', function () {
@@ -37,3 +37,7 @@ Route::resource("order", \App\Http\Controllers\OrderController::class);
 Route::resource("ingredient", \App\Http\Controllers\IngredientController::class);
 Route::resource("product", \App\Http\Controllers\ProductController::class);
 Route::resource("ingredient_product", \App\Http\Controllers\IngredientProductController::class);
+Route::resource("sale", \App\Http\Controllers\SaleController::class);
+Route::resource("product_sale", \App\Http\Controllers\ProductSaleController::class);
+
+
