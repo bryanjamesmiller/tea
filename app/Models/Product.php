@@ -13,4 +13,8 @@ class Product extends Model
     protected $fillable=[
         "name"
     ];
+
+    public function ingredientProducts(){
+        return $this->hasMany(IngredientProduct::class);
+    }
 }

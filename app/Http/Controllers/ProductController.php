@@ -41,11 +41,7 @@ class ProductController extends Controller
             'name' => request("name")
         ]);
 
-        return view("add_ingredient_product", [
-            "product" => $product,
-            'ingredients' => Ingredient::all(),
-            'ingredientProducts' => IngredientProduct::with('ingredient')->where('product_id', $product->id)->get(),
-        ]);
+        return redirect(route('product.edit', $product));
     }
 
     /**
@@ -67,7 +63,17 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $ingredientsAlreadyUsed = $product->ingredientProducts->load('ingredient');
+
+        $allIngredients = Ingredient::all();
+
+        $ingredientsNotYetUsed = $allIngredients->whereNotIn('id', $ingredientsAlreadyUsed->pluck('ingredient_id'));
+
+        return view("add_ingredient_product", [
+            "product" => $product,
+            'ingredients' => $ingredientsNotYetUsed,
+            'ingredientProducts' => $ingredientsAlreadyUsed,
+        ]);
     }
 
     /**

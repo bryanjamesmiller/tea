@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Ingredients for {{ $product->name }}</title>
+    <title>Sales sheet</title>
     <link rel="stylesheet" href="/app.css">
 </head>
 

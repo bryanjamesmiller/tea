@@ -43,11 +43,7 @@ class IngredientProductController extends Controller
            'ounces' => request('ounces'),
         ]);
 
-        return view("add_ingredient_product", [
-            "product" => Product::find(request('product_id')),
-            'ingredients' => Ingredient::all(),
-            'ingredientProducts' => IngredientProduct::with('ingredient')->where('product_id', request('product_id'))->get(),
-        ]);
+        return redirect(route('product.edit', request('product_id')));
     }
 
     /**
