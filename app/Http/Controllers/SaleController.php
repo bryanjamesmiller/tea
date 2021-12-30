@@ -45,9 +45,21 @@ class SaleController extends Controller
      */
     public function store()
     {
+        $userId = request('user_id');
+
+
+        if($userId == '0' || $userId == 'new'){
+            $userId = User::create([
+                'name' => request('user_name'),
+                'cell' => request('cell'),
+                'email' => request('email'),
+                'password' => 'password',
+            ])->id;
+        }
+
         $sale = Sale::create([
             "fulfilled"=> false,
-            "user_id"=> 1,
+            "user_id"=> $userId,
             "total"=> request("total"),
         ]);
 

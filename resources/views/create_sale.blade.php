@@ -18,8 +18,9 @@
             <div class="p-4"></div>
 
 
-            <select name="user_id" id="user id" class="font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Name">
+            <select name="user_id" id="user_id" class="font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Name">
                 <option value="0">Name</option>
+                <option value="new">Create New Customer</option>
                 @foreach($user as $user)
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                 @endforeach
@@ -27,9 +28,10 @@
 
             <div class="p-4"></div>
 
-            <input name="cell_id" id="cell id" class="font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Cell">
+            <input name="user_name" id="user_name" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Customer Name">
+            <input name="cell" id="cell" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Cell (optional)">
+            <input name="email" id="email" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Email (optional)">
 
-            <div class="p-4"></div>
             <input name="total" id="total" class="font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Total">
 
             <div class="p-4"></div>
