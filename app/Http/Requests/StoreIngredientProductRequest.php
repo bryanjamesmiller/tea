@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class StoreIngredientRequest extends FormRequest
+class StoreIngredientProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,10 @@ class StoreIngredientRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'unique:ingredients,name|required',
+            'ingredient_id' => [
+                'required',
+                Rule::notIn(['0'])
+            ],
             'ounces' => [
                 'required',
                 Rule::notIn(['0']),

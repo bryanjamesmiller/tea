@@ -35,7 +35,7 @@ class ProductController extends Controller
      * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(StoreProductRequest $request)
     {
         $product = Product::create([
             'name' => request("name")

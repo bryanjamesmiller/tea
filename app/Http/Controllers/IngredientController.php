@@ -36,7 +36,7 @@ class IngredientController extends Controller
      * @param  \App\Http\Requests\StoreIngredientRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(StoreIngredientRequest $request)
     {
         Ingredient::create([
             'name' => request('name'),

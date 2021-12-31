@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreIngredientProductRequest;
 use App\Models\Ingredient;
 use App\Models\IngredientProduct;
 use App\Models\Product;
@@ -32,10 +33,10 @@ class IngredientProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param StoreIngredientProductRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(StoreIngredientProductRequest $request)
     {
         IngredientProduct::create([
            'product_id' => request('product_id'),
