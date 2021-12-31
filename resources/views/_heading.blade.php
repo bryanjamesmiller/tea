@@ -7,32 +7,13 @@
                 <div class="-ml-2 mr-2 flex items-center md:hidden">
                     <!-- Mobile menu button -->
                     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <!--
-                          Icon when menu is closed.
-
-                          Heroicon name: outline/menu
-
-                          Menu open: "hidden", Menu closed: "block"
-                        -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <!--
-                          Icon when menu is open.
-
-                          Heroicon name: outline/x
-
-                          Menu open: "block", Menu closed: "hidden"
-                        -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <a href="/"><img src="/tea.jpeg"></a>
                     </button>
                 </div>
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
-                    <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
+                    <a href="/">
+                        <img class="hidden md:block h-40 w-auto" src="/tea.jpeg" alt="Workflow">
+                    </a>
                 </div>
                 <div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -45,7 +26,7 @@
                     <a href="reorder" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reorder</a>
                 </div>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center hidden">
                 <div class="flex-shrink-0">
                     <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
                         <!-- Heroicon name: solid/plus-sm -->

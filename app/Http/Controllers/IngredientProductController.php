@@ -16,7 +16,7 @@ class IngredientProductController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
