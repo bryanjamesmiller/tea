@@ -21,6 +21,9 @@
                             Amount in Stock
                         </th>
                         </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Update total
+                        </th>
                         <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Adjust Amount Manually</span>
                         </th>
@@ -29,17 +32,32 @@
                     <tbody>
 
                     @foreach($ingredients as $ingredient)
-                        <tr class="bg-white">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                {{ $ingredient->name }}
+                        <form action="{{ route('ingredient.update', $ingredient->id) }}" method="POST">
+                            @method('PUT')
+                            @csrf
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+
+                                    {{ $ingredient->name }}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    {{ $ingredient->ounces }}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <div>
+                                        <input type="number" name="ounces" id="ounces" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block max-w-xs sm:text-sm border-gray-300 rounded-md" placeholder="New Total">
+                                    </div>
+                                </td>
+                                    <!-- This example requires Tailwind CSS v2.0+ -->
+                               <td>
+                                   <div>
+                                  <button class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Complete Total
+                                  </button>
+                                </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                {{ $ingredient->ounces }}
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            </td>
-                        </tr>
+                            </tr>
+                        </form>
                     @endforeach
                     </tbody>
                 </table>

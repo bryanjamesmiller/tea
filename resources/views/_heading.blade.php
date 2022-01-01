@@ -28,6 +28,8 @@
                     <a href="/product/create" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">New Product</a>
 
                     <a href="reorder" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reorder</a>
+                    <a href="{{ route('ingredient.index') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inventory</a>
+
                 </div>
             </div>
             <div class="flex items-center hidden">

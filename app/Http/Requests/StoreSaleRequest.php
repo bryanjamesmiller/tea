@@ -13,7 +13,7 @@ class StoreSaleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreSaleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "user_name" => "unique:users,name|required",
+            "cell" => "unique:users,cell|sometimes",
+            "email" => "unique:users,email|sometimes",
         ];
     }
 }

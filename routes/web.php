@@ -40,5 +40,5 @@ Route::resource("ingredient_product", \App\Http\Controllers\IngredientProductCon
 Route::resource("sale", \App\Http\Controllers\SaleController::class);
 Route::resource("product_sale", \App\Http\Controllers\ProductSaleController::class);
 Route::resource("customer", \App\Http\Controllers\CustomerController::class);
-
+Route::resource("inventory", \App\Http\Controllers\IngredientController::class);
 

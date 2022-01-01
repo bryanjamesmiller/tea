@@ -40,10 +40,10 @@ class SaleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSaleRequest  $request
+     * @param  \App\Http\Requests\StoreSaleRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(StoreSaleRequest $request)
     {
         $userId = request('user_id');
 

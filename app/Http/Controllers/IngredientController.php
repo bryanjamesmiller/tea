@@ -75,9 +75,13 @@ class IngredientController extends Controller
      * @param  \App\Models\Ingredient  $ingredient
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIngredientRequest $request, Ingredient $ingredient)
+    public function update(Ingredient $ingredient)
     {
-        //
+        $ingredient->update([
+           'ounces' => request('ounces')
+        ]);
+
+        return redirect(route('ingredient.index'));
     }
 
     /**
