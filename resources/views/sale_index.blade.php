@@ -14,10 +14,12 @@
                     <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Name
-
+                            Date
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Name
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider max-w-screen-sm">
                             Products
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -29,20 +31,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($productSales as $productSale)
+                    @foreach($sales as $sale)
 
 
                     <tr class="bg-white">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {{ $productSale->sale->user->name   }}
+                             {{ $sale->created_at->diffForHumans()}}
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            @foreach($productSale->sale->products as $product)
-                                {{ $productSale->quantity }} {{ $product->name }},
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            {{ $sale->user->name   }}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500">
+                            @foreach($sale->productSales as $productSale)
+                                {{ $productSale->quantity }} {{ $productSale->product->name }},
                             @endforeach
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {{ $productSale->sale->total }}
+                            {{ $sale->total }}
                         </td>
                       <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>

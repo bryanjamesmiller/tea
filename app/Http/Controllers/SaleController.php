@@ -19,7 +19,7 @@ class SaleController extends Controller
     public function index()
     {
         return view("sale_index", [
-            "productSales" => ProductSale::with('sale', 'sale.products')->get(),
+            "sales" => Sale::with('products')->orderByDesc('created_at')->get(),
         ]);
     }
 
@@ -50,7 +50,7 @@ class SaleController extends Controller
 
         if($userId == '0' || $userId == 'new'){
             $userId = User::create([
-                'name' => request('user_name'),
+                'name' => ucfirst(request('user_name')),
                 'cell' => request('cell'),
                 'email' => request('email'),
                 'password' => 'password',

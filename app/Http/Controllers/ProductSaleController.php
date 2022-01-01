@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProductSaleRequest;
 use App\Http\Requests\UpdateProductSaleRequest;
 use App\Models\Product;
 use App\Models\ProductSale;
+use App\Models\Sale;
 use App\Models\User;
 use Illuminate\Http\Response;
 
@@ -34,6 +35,7 @@ class ProductSaleController extends Controller
            "products" => Product::all(),
            "productSales" => $productSales,
            "saleId" => request('sale_id'),
+           "user" => Sale::find(request('sale_id'))->user,
        ]);
     }
 

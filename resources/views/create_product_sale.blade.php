@@ -8,6 +8,7 @@
 <body>
 @include("_heading")
 <h1>Create Sale</h1>
+<h1 class="text-center">Please add each product for the sale for {{$user->name}}</h1>
 
 <div class="grid grid-cols-3">
     <div></div>

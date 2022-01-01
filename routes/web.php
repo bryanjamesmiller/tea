@@ -25,8 +25,8 @@ Route::get('sales', function () {
     return view('sales');
 });
 
-Route::get('customers', function () {
-        return view('customers');
+Route::get('customer', function () {
+        return view('customer');
 });
 
 Route::get('reorder', function () {
@@ -39,5 +39,6 @@ Route::resource("product", \App\Http\Controllers\ProductController::class);
 Route::resource("ingredient_product", \App\Http\Controllers\IngredientProductController::class);
 Route::resource("sale", \App\Http\Controllers\SaleController::class);
 Route::resource("product_sale", \App\Http\Controllers\ProductSaleController::class);
+Route::resource("customer", \App\Http\Controllers\CustomerController::class);
 
 

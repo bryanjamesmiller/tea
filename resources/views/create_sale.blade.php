@@ -28,16 +28,18 @@
 
             <div class="p-4"></div>
 
-            <input name="user_name" id="user_name" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Customer Name">
-            <input name="cell" id="cell" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Cell (optional)">
-            <input name="email" id="email" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Email (optional)">
+            <div id="hide_me">
+                <input name="user_name" id="user_name" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Customer Name">
+                <input name="cell" id="cell" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Cell (optional)">
+                <input name="email" id="email" class="mb-4 font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Email (optional)">
+            </div>
 
             <input name="total" id="total" class="font-semibold placeholder-black w-full shadow-sm text-black focus:ring-indigo-500 focus:border-indigo-500 block text-center p-4 sm:text-sm border-gray-900 px-4 rounded-full" placeholder="Total">
 
             <div class="p-4"></div>
 
             <button class="w-full py-4 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                Submit
+                Next
             </button>
 
             <div class="pt-4"></div>
@@ -45,6 +47,9 @@
         </form>
     </div>
 </div>
+
+<script src="/app.js"></script>
+
 </body>
 
 </html>
