@@ -45,7 +45,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <div>
-                                        <input type="number" name="ounces" id="ounces" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block max-w-xs sm:text-sm border-gray-300 rounded-md" placeholder="New Total">
+                                        <input type="number" step=".00001" name="ounces" id="ounces" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block max-w-xs sm:text-sm border-gray-300 rounded-md" placeholder="New Total">
                                     </div>
                                 </td>
                                     <!-- This example requires Tailwind CSS v2.0+ -->

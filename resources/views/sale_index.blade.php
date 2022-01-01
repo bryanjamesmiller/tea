@@ -32,27 +32,30 @@
                     </thead>
                     <tbody>
                     @foreach($sales as $sale)
+                        <form action="{{ route('sale.destroy', $sale->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
 
-
-                    <tr class="bg-white">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                             {{ $sale->created_at->diffForHumans()}}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {{ $sale->user->name   }}
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                            @foreach($sale->productSales as $productSale)
-                                {{ $productSale->quantity }} {{ $productSale->product->name }},
-                            @endforeach
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {{ $sale->total }}
-                        </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                        </td>
-                    </tr>
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                     {{ $sale->created_at->diffForHumans()}}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {{ $sale->user->name   }}
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    @foreach($sale->productSales as $productSale)
+                                        {{ $productSale->quantity }} {{ $productSale->product->name }},
+                                    @endforeach
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    {{ $sale->total }}
+                                </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                  <button class="text-indigo-600 hover:text-indigo-900">Delete</button>
+                                </td>
+                            </tr>
+                        </form>
                     @endforeach
                     </tbody>
                     <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">return</a>

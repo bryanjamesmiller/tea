@@ -24,7 +24,7 @@ class StoreSaleRequest extends FormRequest
     public function rules()
     {
         return [
-            "user_name" => "unique:users,name|required",
+            "user_name" => "unique:users,name|required|sometimes",
             "cell" => "unique:users,cell|sometimes",
             "email" => "unique:users,email|sometimes",
         ];
