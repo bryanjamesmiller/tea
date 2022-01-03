@@ -26,7 +26,7 @@ Route::get('sales', function () {
 });
 
 Route::get('customer', function () {
-        return view('customer');
+        return redirect(route("user.index"));
 });
 
 Route::get('reorder', function () {
@@ -39,6 +39,6 @@ Route::resource("product", \App\Http\Controllers\ProductController::class);
 Route::resource("ingredient_product", \App\Http\Controllers\IngredientProductController::class);
 Route::resource("sale", \App\Http\Controllers\SaleController::class);
 Route::resource("product_sale", \App\Http\Controllers\ProductSaleController::class);
-Route::resource("customer", \App\Http\Controllers\CustomerController::class);
+Route::resource("user", \App\Http\Controllers\UserController::class);
 Route::resource("inventory", \App\Http\Controllers\IngredientController::class);
 
